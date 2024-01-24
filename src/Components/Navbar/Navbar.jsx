@@ -1,22 +1,19 @@
 import logo from "../../images/logo.svg";
-import "./Navbar.css";
+import { Img, InputSpace, Nav, Button } from "./NavbarStyled";
 
 export default function Navbar() {
   return (
     <>
-      <nav>
-        <img src={logo} alt="Logo Ipsum" />
+      <Nav>
+        <Img src={logo} alt="Logo Ipsum" />
 
-        <div className="input-search-space">
+        <InputSpace className="input-search-space">
           <input type="text"></input>
           <i className="bi bi-search"></i>
-        </div>
+        </InputSpace>
 
-        <button>
-          Entrar
-          <span></span>
-        </button>
-      </nav>
+        <Button>Entrar</Button>
+      </Nav>
     </>
   );
 }
