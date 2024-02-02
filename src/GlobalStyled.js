@@ -13,5 +13,5 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  width: 100vw;
+  width: 100%;
 }`;
