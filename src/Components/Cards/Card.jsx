@@ -1,32 +1,32 @@
 /* eslint-disable react/prop-types */
 
+import { TextLimit } from "../TextLimit/TextLimit";
+import { TitleLimit } from "../TitleLimit/TitleLimit";
 import {
   SectionCardContainer,
   ArticleCardBody,
   ArticleCardFooter,
 } from "./CardStyled";
 
-export default function Card({ news }) {
-  console.log(news);
-
+export default function Card(propriedades) {
   return (
     <>
       <SectionCardContainer>
         <ArticleCardBody>
           <div>
-            <h2>{news.title}</h2>
-            <p>{news.text}</p>
+            <TitleLimit title={propriedades.title} limit={50}></TitleLimit>
+            <img src={propriedades.banner} alt="Placeholder for image" />
           </div>
-          <img src={news.image} alt="Placeholder for image" />
+          <TextLimit text={propriedades.text} limit={200} />
         </ArticleCardBody>
         <ArticleCardFooter>
           <div>
             <i className="bi bi-hand-thumbs-up"></i>
-            <span>{news.likes}</span>
+            <span>{propriedades.likes}</span>
           </div>
           <div>
             <i className="bi bi-chat"></i>
-            <span>{news.comments}</span>
+            <span>{propriedades.comments}</span>
           </div>
         </ArticleCardFooter>
       </SectionCardContainer>
