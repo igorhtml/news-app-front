@@ -16,7 +16,11 @@ export default function Card(propriedades) {
       <SectionCardContainer top={propriedades.top}>
         <LeftCardDiv>
           <ArticleCardBody top={propriedades.top}>
-            <TitleLimit title={propriedades.title} limit={40}></TitleLimit>
+            <TitleLimit
+              title={propriedades.title}
+              limit={40}
+              top={true}
+            ></TitleLimit>
             <TextLimit
               top={propriedades.top}
               text={propriedades.text}

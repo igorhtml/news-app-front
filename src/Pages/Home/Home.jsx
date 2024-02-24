@@ -4,7 +4,6 @@ import {
   getTopNewService,
 } from "../../services/newsServices.js";
 
-import Navbar from "../../Components/Navbar/Navbar.jsx";
 import { HomeBody, HomeHeader } from "./HomeStyled.js";
 import { useState, useEffect } from "react";
 
@@ -14,7 +13,9 @@ export default function Home() {
 
   async function findAllNews() {
     const newsResponse = await getAllNewsService();
-    setNews(newsResponse.data.results);
+    const newsShifted = newsResponse.data.results.slice(1);
+    console.log(newsShifted);
+    setNews(newsShifted);
 
     const topResponse = await getTopNewService();
     setTop(topResponse.data);
@@ -26,7 +27,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <HomeHeader>
         <Card
           top={true}

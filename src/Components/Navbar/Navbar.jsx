@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-undef */
+import { Outlet } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import { Img, InputSpace, Nav, Button } from "./NavbarStyled";
 
@@ -14,6 +16,7 @@ export default function Navbar() {
 
         <Button>Entrar</Button>
       </Nav>
+      <Outlet />
     </>
   );
 }
